@@ -50,7 +50,7 @@ def main():
     word = wordpool[0]
     wordpool.sort()
     wordpool.insert(0, "default")
-    while attempts > -1:
+    while attempts > 0:
         guess = str(input())
         
         #overlays result ontop of user input via adaptation of solution from
