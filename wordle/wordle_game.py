@@ -59,14 +59,17 @@ def main():
         ERASE_LINE = '\x1b[2K'
         if guess != "show":
             if len(guess) == N:
-                result = format_result(guess, word, N)
-                print(CURSOR_UP_ONE + ERASE_LINE + pool.p_formatted(result[0]))
-                if guess == word:
-                    print("You found the word! Good job :)")
-                    print(f"Guesses: {N-attempts+1}")
-                    sys.exit()
-                pool.update(result[1], guess, wordpool)
-                attempts -= 1
+                if pool.contains(guess):
+                    result = format_result(guess, word, N)
+                    print(CURSOR_UP_ONE + ERASE_LINE + pool.p_formatted(result[0]))
+                    if guess == word:
+                        print("You found the word! Good job :)")
+                        print(f"Guesses: {N-attempts+1}")
+                        sys.exit()
+                    pool.update(result[1], guess, wordpool)
+                    attempts -= 1
+                else:
+                    print("Error: word not found in nltk word set")
             else:
                 print("Error: word does not have proper length")
         else:

@@ -101,3 +101,7 @@ def p_formatted(formatted):
         else:
             x += 1
     return "".join(formatted)
+
+#returns true if guess is in nltk word set, false otherwise
+def contains(guess):
+    return guess in setofwords
