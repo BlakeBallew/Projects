@@ -33,7 +33,7 @@ def update(list_guess, word_guess, pool):
             cand += 1
 
 #performs necessary deductions of word pool
-#returns: boolean of if conditions is met
+#returns: boolean of whether or not conditions are met 
 def check_1(word_guess, list_guess, candidate):
     group_1 = []
     group_2 = []
