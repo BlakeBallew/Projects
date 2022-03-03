@@ -62,7 +62,7 @@ def check_1(word_guess, list_guess, candidate):
     return True
 
 #performs deductions 
-#returns: boolean of if conditions is met
+#returns: boolean of whether or not conditions are met
 def check_2(word_guess, list_guess, candidate):
     counter = 0
     for letter in list_guess:
